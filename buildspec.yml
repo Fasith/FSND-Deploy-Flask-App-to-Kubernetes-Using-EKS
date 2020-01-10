@@ -4,15 +4,7 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - yum -y groupinstall development
-      - yum -y install zlib-devel
-      - wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
-      - tar xJf Python-3.6.0.tar.xz
-      - cd Python-3.6.0
-      - ./configure
-      - make
-      - make install 
+    commands: 
       - curl -sS -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/aws-iam-authenticator
       - curl -sS -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
       - chmod +x ./kubectl ./aws-iam-authenticator
